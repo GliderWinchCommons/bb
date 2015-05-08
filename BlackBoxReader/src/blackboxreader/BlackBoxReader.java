@@ -191,6 +191,8 @@ public static boolean checkTimes(String time, FilterUI filter) throws ParseExcep
     startDateWanted.setTime(sdf.parse(filter.firstLoggerEntryTime.getText())); //TextField -> String -> Date -> Calendar
     endDateWanted.setTime(sdf.parse(filter.lastLoggerEntryTime.getText())); //TextField -> String -> Date -> Calendar
     currentTime = unixToCalendar(unixTime);
+    //if c1.compareTo(c2) > 0 -> c2 is a later time
+    //if c1.compareTo(c2) < 0 -> c2 is an earlier time
     if((startDateWanted.compareTo(currentTime) >= 0) && (endDateWanted.compareTo(currentTime) <= 0)){
         flag = true;
     }
